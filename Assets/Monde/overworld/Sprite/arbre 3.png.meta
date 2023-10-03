@@ -20,6 +20,15 @@ TextureImporter:
   - first:
       213: -228020109113086592
     second: arbre 3_2
+  - first:
+      213: 7226842492152031786
+    second: arbre 3_3
+  - first:
+      213: -117567417972393821
+    second: arbre 3_4
+  - first:
+      213: -8803940678098351295
+    second: arbre 3_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,10 +119,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 63
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,10 +140,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 63
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,10 +161,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 63
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,6 +172,69 @@ TextureImporter:
       bones: []
       spriteID: 08d2baa3be8e5dcf0800000000000000
       internalID: -228020109113086592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arbre 3_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2aab6805f6ea4460800000000000000
+      internalID: 7226842492152031786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arbre 3_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a878966e015e5ef0800000000000000
+      internalID: -117567417972393821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arbre 3_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b065a399e12d580800000000000000
+      internalID: -8803940678098351295
       vertices: []
       indices: 
       edges: []
