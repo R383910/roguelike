@@ -5,10 +5,6 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
-    public float invincibilityTimeAfterHit = 3f;
-    public float invincibilityFlashDelay = 0.2f;
-    public bool isInvincible = false;
-
     public SpriteRenderer graphics;
     //public HealthBar healthBar;
 
