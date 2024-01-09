@@ -10159,8 +10159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e04fb9e973719c540812646ec5f219dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 500
   rb: {fileID: 1007656286}
+  enemyData: {fileID: 11400000, guid: 8dcd2ad5099e2c6418f2e6b86dae732e, type: 2}
 --- !u!50 &1007656286
 Rigidbody2D:
   serializedVersion: 4
