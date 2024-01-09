@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
@@ -24,11 +25,17 @@ public class EnemyController : MonoBehaviour
         float randomHorizontal = Random.Range(-1f, 1f);
         float randomVertical = Random.Range(-1f, 1f);
 
-        MovePlayer(randomHorizontal, randomVertical);
+        MoveEnnemy(randomHorizontal, randomVertical);
 
         yield return new WaitForSeconds(5f);
 
         nextRandomMoveTime = Time.time + 5f;
         isMovingRandomly = false;
+    }
+    
+    public void MoveEnnemy(float _horizontalMovement, float _verticalMovement)
+    {
+        Vector3 targetVelocity = new Vector2(_horizontalMovement, _verticalMovement);
+        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
     }
 }

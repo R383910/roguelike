@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
         MovePlayer(horizontalMovement, verticalMovement);
     }
 
-    void MovePlayer(float _horizontalMovement, float _verticalMovement)
+    public void MovePlayer(float _horizontalMovement, float _verticalMovement)
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, _verticalMovement);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
