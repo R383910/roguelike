@@ -10203,6 +10203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  isInvisible: 0
   graphics: {fileID: 0}
   hitSound: {fileID: 0}
 --- !u!114 &1206359655
@@ -12099,6 +12100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 1.9787679
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977062779936125587, guid: f181b7d5e933f4f4b9b05c213b1a263f,
+        type: 3}
+      propertyPath: esquiveSpeed
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4091936957606521176, guid: f181b7d5e933f4f4b9b05c213b1a263f,
         type: 3}

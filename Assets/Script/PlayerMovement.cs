@@ -3,9 +3,12 @@
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
+    public float esquiveSpeed;
 
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
+
+    public PlayerHealth pH;
 
     void FixedUpdate()
     {

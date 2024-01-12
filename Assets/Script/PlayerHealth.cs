@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public bool isInvisible = false;
 
     public SpriteRenderer graphics;
     //public HealthBar healthBar;
@@ -53,16 +54,17 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-
-        currentHealth -= damage;
-        //healthBar.SetHealth(currentHealth);
-
-        if (currentHealth <= 0)
+        if (isInvisible == false)
         {
-            Die();
-            return;
-        }
+            currentHealth -= damage;
+            //healthBar.SetHealth(currentHealth);
 
+            if (currentHealth <= 0)
+            {
+                Die();
+                return;
+            }
+        }
     }
 
     public void Die()
