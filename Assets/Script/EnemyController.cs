@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,8 +8,7 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
     public EnemyData enemyData;
-
-    private float nextRandomMoveTime = 0f;
+    
     private bool isMovingRandomly = false;
 
     private void Start()
@@ -32,12 +30,12 @@ public class EnemyController : MonoBehaviour
 
         float randomHorizontal = Random.Range(-5f, 5f);
         float randomVertical = Random.Range(-5f, 5f);
+        float RandomMoveTime = Random.Range(3f, 7f);
 
         MoveEnnemy(randomHorizontal, randomVertical);
 
-        yield return new WaitForSeconds(5f);
-
-        nextRandomMoveTime = Time.time + 5f;
+        yield return new WaitForSeconds(RandomMoveTime);
+        
         isMovingRandomly = false;
     }
     

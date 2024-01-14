@@ -7,11 +7,11 @@ public class PlayerHealth : MonoBehaviour
     public bool isInvisible = false;
 
     public SpriteRenderer graphics;
-    //public HealthBar healthBar;
 
     public AudioClip hitSound;
 
     public static PlayerHealth instance;
+    public HealthBar healthBar;
 
     private void Awake()
     {
@@ -27,14 +27,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(60);
+            TakeDamage(20);
         }
     }
 
@@ -48,8 +48,8 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth += amount;
         }
-
-        //healthBar.SetHealth(currentHealth);
+        
+        healthBar.SetHealth(currentHealth);
     }
 
     public void TakeDamage(int damage)
@@ -57,24 +57,27 @@ public class PlayerHealth : MonoBehaviour
         if (isInvisible == false)
         {
             currentHealth -= damage;
-            //healthBar.SetHealth(currentHealth);
 
             if (currentHealth <= 0)
             {
                 Die();
+                currentHealth = 0;
                 return;
             }
         }
+        
+        healthBar.SetHealth(currentHealth);
     }
 
     public void Die()
     {
+        healthBar.SetHealth(0);
         Debug.LogWarning("t mort");
     }
 
     public void Respawn()
     {
         currentHealth = maxHealth;
-        //healthBar.SetHealth(currentHealth);
+        healthBar.SetHealth(currentHealth);
     }
 }
