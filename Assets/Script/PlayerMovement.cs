@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,18 +8,27 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public int reloadTimeDash;
     private bool isDashing = false;
+    public int divDist = 1;
 
     public Rigidbody2D rb;
     private Vector3 velocity = Vector3.zero;
 
     public PlayerHealth pH;
 
+    private void Awake()
+    {
+        if (divDist <= 0)
+        {
+            divDist = 1;
+        }
+    }
+
     void FixedUpdate()
     {
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
         float verticalMovement = Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime;
-        float horizontalDash = Input.GetAxis("Horizontal") * dashSpeed;
-        float verticalDash = Input.GetAxis("Vertical") * dashSpeed;
+        float horizontalDash = Input.GetAxis("Horizontal") * (dashSpeed / divDist);
+        float verticalDash = Input.GetAxis("Vertical") * (dashSpeed / divDist);
 
         if (Input.GetKeyDown(KeyCode.E) && !isDashing)
         {
