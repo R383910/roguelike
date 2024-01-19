@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    public bool isInvisible = false;
-
-    public SpriteRenderer graphics;
+    public bool isInvinsible = false;
+    public PlayerMovement pM;
+    public BoxCollider2D col;
+    public GameObject graphics;
 
     public AudioClip hitSound;
 
@@ -36,6 +38,11 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Respawn();
+        }
     }
 
     public void HealPlayer(int amount)
@@ -54,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isInvisible == false)
+        if (isInvinsible == false)
         {
             currentHealth -= damage;
 
@@ -72,6 +79,9 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         healthBar.SetHealth(0);
+        pM.enabled = false;
+        col.enabled = false;
+        graphics.SetActive(false);
         Debug.LogWarning("t mort");
     }
 
@@ -79,5 +89,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
+        pM.enabled = true;
+        col.enabled = true;
+        graphics.SetActive(true);
     }
 }

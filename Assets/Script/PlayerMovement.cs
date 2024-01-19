@@ -47,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash (float _horizontalDash, float _verticalDash, int _reloadTimeDash)
     {
         isDashing = true;
-        pH.isInvisible = true;
+        pH.isInvinsible = true;
         Vector3 targetVelocity = new Vector2(_horizontalDash, _verticalDash);
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref velocity, .05f);
-        pH.isInvisible = false;
+        pH.isInvinsible = false;
         yield return new WaitForSeconds(_reloadTimeDash);
         rb.velocity = Vector3.zero;
         isDashing = false;
