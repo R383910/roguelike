@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerMovement pM;
     public BoxCollider2D col;
     public GameObject graphics;
+    public bool isDead;
 
     public AudioClip hitSound;
 
@@ -39,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(20);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && isDead == true)
         {
             Respawn();
         }
@@ -82,6 +83,7 @@ public class PlayerHealth : MonoBehaviour
         pM.enabled = false;
         col.enabled = false;
         graphics.SetActive(false);
+        isDead = true;
         Debug.LogWarning("t mort");
     }
 
@@ -92,5 +94,6 @@ public class PlayerHealth : MonoBehaviour
         pM.enabled = true;
         col.enabled = true;
         graphics.SetActive(true);
+        isDead = false;
     }
 }
