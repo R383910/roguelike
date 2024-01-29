@@ -4,8 +4,9 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-    public float dashSpeed;
+    public PlayerData playerData;
+    private float moveSpeed;
+    private float dashSpeed;
     public int reloadTimeDash;
     private bool isDashing = false;
     public int divDist = 1;
@@ -21,6 +22,12 @@ public class PlayerMovement : MonoBehaviour
         {
             divDist = 1;
         }
+    }
+
+    private void Start()
+    {
+        moveSpeed = playerData.speed;
+        dashSpeed = moveSpeed * 2;
     }
 
     void FixedUpdate()

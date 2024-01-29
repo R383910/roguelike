@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public PlayerData playerData;
     public int maxHealth = 100;
     public int currentHealth;
     public bool isInvinsible = false;
@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        maxHealth = playerData.health;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
