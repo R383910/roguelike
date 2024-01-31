@@ -17,6 +17,6 @@ MonoBehaviour:
   enemyModel: {fileID: 2130908205208431223, guid: ac880401ea20c924cbb2736cb8e8e98b,
     type: 3}
   anim: {fileID: 9100000, guid: aac04178344603849a81fed67c2a1246, type: 2}
-  health: 0
+  health: 10
   speed: 200
   damage: 0
