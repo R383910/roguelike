@@ -4,28 +4,31 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public EnemyData enemyData;
-    public int enemyHealth;
+    private int currentHealth;
     public GameObject enemy;
+
     void Start()
     {
-        enemyHealth = enemyData.health;
+        currentHealth = enemyData.health;
     }
 
-    public void Update()
+    void Update()
     {
-        if (enemyHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    public void takeDamage(int _enemyHealth, int _damage)
+    public void TakeDamage(int damage)
     {
-        _enemyHealth -= _damage;
+        Debug.Log("damage");
+        currentHealth -= damage;
     }
 
-    public void Die()
+    void Die()
     {
+        Debug.Log("mort");
         Destroy(enemy);
     }
 }

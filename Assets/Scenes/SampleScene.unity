@@ -10408,7 +10408,7 @@ GameObject:
   - component: {fileID: 1007656287}
   m_Layer: 0
   m_Name: Rat
-  m_TagString: Ennemy
+  m_TagString: Enemy
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10477,8 +10477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 8dcd2ad5099e2c6418f2e6b86dae732e, type: 2}
-  enemyHealth: 0
-  enemy: {fileID: 0}
+  enemy: {fileID: 1007656283}
 --- !u!1 &1131876248
 GameObject:
   m_ObjectHideFlags: 0
@@ -10805,6 +10804,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecfe7687bc5c27b40a6ff2584a9109cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderTrigger: {fileID: 1900005793}
+  reloadTimeAttack: 1
+  enemyHealth: {fileID: 1007656287}
+  playerData: {fileID: 11400000, guid: b4819f30b6c1e9145b00d9ecde0a3c38, type: 2}
+--- !u!61 &1900005793 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2544666474205411298, guid: f181b7d5e933f4f4b9b05c213b1a263f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2344388878121503723}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1978296446
 GameObject:
   m_ObjectHideFlags: 0

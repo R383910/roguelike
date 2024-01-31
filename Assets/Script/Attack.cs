@@ -1,22 +1,22 @@
 ﻿using System;
 using UnityEngine;
 
-public class EnnemyDamage : MonoBehaviour
+public class Attack : MonoBehaviour
 {
-    public BoxCollider2D colliderTrigger;
+    public Collider2D colliderTrigger;
     public float reloadTimeAttack;
     private float reloadAttack;
     public EnemyHealth enemyHealth;
     public PlayerData playerData;
     private int damage;
 
-    public void Start()
+    void Start()
     {
         reloadAttack = reloadTimeAttack;
         damage = playerData.damage;
     }
 
-    public void Update()
+    void Update()
     {
         if (reloadAttack > 0)
         {
@@ -24,12 +24,14 @@ public class EnnemyDamage : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(BoxCollider2D _collider)
+    void OnTriggerEnter2D(Collider2D _collider)
     {
-        if (_collider.CompareTag("Ennemy") && Input.GetKeyDown(KeyCode.E) && reloadAttack == 0)
+        Debug.Log("IsTriger");
+        if (_collider.CompareTag("Enemy") && Input.GetKeyDown(KeyCode.E) && reloadAttack <= 0)
         {
-            int _enemyHealth = enemyHealth.enemyHealth;
-            enemyHealth.takeDamage(_enemyHealth, damage);
+            Debug.Log("Attack effectué");
+            enemyHealth.TakeDamage(damage);
+            reloadAttack = reloadTimeAttack;
         }
     }
 }
