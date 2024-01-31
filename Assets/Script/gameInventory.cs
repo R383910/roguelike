@@ -2,20 +2,24 @@
 
 public class gameInventory : MonoBehaviour
 {
-
-    public GameObject[] items;
-    void Start()
-    {
-        InitializeInventory();
-    }
-    
+    [SerializeField] private int gameCoin;
     void Update()
     {
         
     }
 
-    void InitializeInventory()
+    public void InitializeCoin(int gameCoin)
     {
-        
+        gameCoin = 0;
+    }
+
+    public void addGameCoin(int addCoin, int gameCoin)
+    {
+        gameCoin += addCoin;
+    }
+
+    public void removeGameCoin(int removeCoin, int gameCoin)
+    {
+        gameCoin -= removeCoin;
     }
 }
