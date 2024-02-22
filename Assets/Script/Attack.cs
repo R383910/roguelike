@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class Attack : MonoBehaviour
-{
+{ //déclaration de variable
     public Collider2D colliderTrigger;
     public float reloadTimeAttack;
     private float reloadAttack;
